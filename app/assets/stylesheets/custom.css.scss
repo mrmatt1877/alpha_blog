@@ -1,1 +1,37 @@
+
+
 @import "materialize";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#nav-logo,
+#nav-mobile {
+  padding: 0 2% 0 2%;
+}
+
+#hero {
+  background: image-url('home_page.jpg');
+  background-size :cover;
+  position: relative;
+}
+
+.header {
+  position:absolute;
+  top:50%;
+  text-align:center;
+  width:100%;
+  color:#fff;
+  font-size:36px;
+  -ms-transform: translate(0,-50%); /* IE 9 */
+    -webkit-transform: translate(0,-50%); /* Safari */
+    transform: translate(0,-50%);
+
+}

@@ -15,3 +15,29 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+var ready;
+ready = function() {
+  $('.button-collapse').sideNav({
+     menuWidth: 300, // Default is 240
+     edge: 'right', // Choose the horizontal origin
+     closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+   }
+ );
+
+  function fullscreen(){
+    jQuery('#hero').css({
+        width: jQuery(window).width(),
+        height: jQuery(window).height()
+    });
+  }
+
+  fullscreen();
+
+// Run the function in case of window resize
+  jQuery(window).resize(function() {
+   fullscreen();
+ });
+};
+
+$(document).ready(ready);
+$(document).on('turbolinks:load', ready);
