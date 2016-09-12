@@ -1,10 +1,13 @@
 <div class="container">
-  <h1>Showing selected article</h1>
+  <h2 class="center-align flow-text">Title: <%= @article.title %></h2>
+  <div class="row">
+    <div class="col s12 m10 offset-m1">
+      <div class="card-panel blue lighten-5">
+        <span class="flow-text"><%= simple_format(@article.description) %></span>
+      </div>
+    </div>
+  </div>
 
-  <p>Title: <%= @article.title %>
-  </p>
-  <p>Description: <%= @article.description %>
-  </p>
 
   <%= link_to 'Edit this article', edit_article_path(@article) %> |
   <%= link_to 'Back to articles listing', articles_path %>

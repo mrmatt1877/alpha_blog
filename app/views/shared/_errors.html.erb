@@ -1,0 +1,11 @@
+<% if obj.errors.any? %>
+<div class="row">
+  <ul class="collection with-header col m6 s12">
+    <li class="collection-header red darken-4 white-text text-darken-2"><h4>The following errors prevented the article from getting created</h4></li>
+    <% obj.errors.full_messages.each do |msg| %>
+    <li class="collection-item"><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+
+<% end %>

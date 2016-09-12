@@ -21,8 +21,9 @@ ready = function() {
      menuWidth: 300, // Default is 240
      edge: 'right', // Choose the horizontal origin
      closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-   }
- );
+  });
+  $('#textarea1').trigger('autoresize');
+  Materialize.updateTextFields();
 
   function fullscreen(){
     jQuery('#hero').css({
@@ -35,8 +36,8 @@ ready = function() {
 
 // Run the function in case of window resize
   jQuery(window).resize(function() {
-   fullscreen();
- });
+    fullscreen();
+  });
 };
 
 $(document).ready(ready);

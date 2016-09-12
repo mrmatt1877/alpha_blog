@@ -1,28 +1,19 @@
-<% if @article.errors.any? %>
+<%= render 'shared/errors', obj: @article %>
 <div class="row">
-  <ul class="collection with-header col m6 s12">
-    <li class="collection-header red darken-4 white-text text-darken-2"><h4>The following errors prevented the article from getting created</h4></li>
-    <% @article.errors.full_messages.each do |msg| %>
-    <li class="collection-item"><%= msg %></li>
-    <% end %>
-  </ul>
+  <%= form_for @article do |f| %>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+      <div class="input-field col s12">
+        <%= f.label :description, for:"textarea1" %>
+        <%= f.text_area :description, id:"textarea1", class:"materialize-textarea" %>
+      </div>
+          <%= f.submit %>
+    </div>
+  <% end %>
 </div>
 
-<% end %>
-
-<%= form_for @article do |f| %>
-  <p>
-      <%= f.label :title %><br />
-      <%= f.text_field :title %>
-  </p>
-  <p>
-      <%= f.label :description %><br />
-      <%= f.text_area :description %>
-  </p>
-  <p>
-      <%= f.submit %>
-  </p>
-
-<% end %>
 
 <%= link_to 'Back to articles listing', articles_path %>
