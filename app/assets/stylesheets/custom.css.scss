@@ -12,6 +12,11 @@ main {
   flex: 1 0 auto;
 }
 
+.pagination a li.active {
+  color: #fff;
+  background-color: #ccc;
+}
+
 #nav-logo,
 #nav-mobile {
   padding: 0 2% 0 2%;

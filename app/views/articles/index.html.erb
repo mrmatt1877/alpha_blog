@@ -3,5 +3,11 @@
   <p>
   <%= link_to "Create new article", new_article_path %>
   </p>
+  <div class="center-align">
+    <%= will_paginate @collection, renderer: MaterializeRenderer %>
+  </div>
   <%= render 'article', obj: @articles %>
+  <div class="center-align">
+    <%= will_paginate @collection, renderer: MaterializeRenderer %>
+  </div>
 </div>
