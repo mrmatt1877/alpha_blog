@@ -24,6 +24,7 @@ ready = function() {
   });
   $('#textarea1').trigger('autoresize');
   Materialize.updateTextFields();
+  $(".dropdown-button").dropdown();
 
   function fullscreen(){
     jQuery('#hero').css({
