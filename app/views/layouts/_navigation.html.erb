@@ -6,6 +6,7 @@
 </ul>
 <% end %>
 <ul id="dropdown2" class="dropdown-content">
+  <li><%= link_to "All Categories", categories_path %></li>
   <% Category.all.each do |category| %>
     <li><%= link_to "#{category.name}", category_path(category) %></li>
   <% end %>
@@ -25,18 +26,18 @@
       <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Categories<i class="material-icons right">arrow_drop_down</i></a></li>
       <% if logged_in? %>
         <li><%= link_to "Log out", logout_path, method: :delete %></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Your Profile <%= "Admin" if current_user.admin? %><i class="material-icons right">arrow_drop_down</i></a></li>
+        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Your Profile <%= "(Admin)" if current_user.admin? %><i class="material-icons right">arrow_drop_down</i></a></li>
       <% else %>
         <li><%= link_to "Log in", login_path %></li>
         <li><%= link_to "Sign up", signup_path %></li>
       <% end %>
     </ul>
     <ul class="right side-nav" id="mobile-demo">
-      <li><%= link_to "Users", users_path %></li>>
+      <li><%= link_to "Users", users_path %></li>
       <li><%= link_to "Articles", articles_path %></li>
       <li><%= link_to "About", about_path %></li>
       <% if logged_in? %>
-        <li>Your Profile <%= "Admin" if current_user.admin? %></li>
+        <li class="blue darken-2 center-align">Your Profile <%= "(Admin)" if current_user.admin? %></li>
         <li><%= link_to "Log out", logout_path, method: :delete %></li>
         <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
         <li><%= link_to "View your profile", user_path(current_user) %></li>

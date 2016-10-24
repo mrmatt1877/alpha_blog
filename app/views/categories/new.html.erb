@@ -1,14 +1,3 @@
 <h1 class="center-align">Create new category</h1>
 
-<%= render 'shared/errors', obj: @category %>
-<div class="row">
-  <%= form_for @category do |f| %>
-    <div class="row">
-      <div class="input-field col s12">
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-      </div>
-          <%= f.submit %>
-    </div>
-  <% end %>
-</div>
+<%= render 'form' %>

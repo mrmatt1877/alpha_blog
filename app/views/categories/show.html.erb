@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="center-align"><%= "Category: " + @category.name %></h1>
+  <% if logged_in? and current_user.admin? %>
+    <p>
+      <%= link_to "Edit Category Name", edit_category_path(@category) %>
+    </p>
+  <% end %>
+  <div class="center-align">
+    <%= will_paginate @category_articles, renderer: MaterializeRenderer %>
+  </div>
+  <%= render 'articles/article', obj: @category_articles %>
+  <div class="center-align">
+    <%= will_paginate @category_articles, renderer: MaterializeRenderer %>
+  </div>
+</div>

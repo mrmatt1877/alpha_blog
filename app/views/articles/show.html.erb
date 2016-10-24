@@ -14,8 +14,16 @@
     </div>
     <% end %>
     <div class="col s12 m10 offset-m1">
-      <div class="card-panel blue lighten-5">
+      <div class="card center-align blue lighten-5">
+        <span class="cart-title"><%= @article.title %></span>
         <span class="flow-text"><%= simple_format(@article.description) %></span>
+        <% if @article.categories.any? %>
+          <div class="card-action">
+            <p>
+              <%= render @article.categories %>
+            </p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

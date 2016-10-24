@@ -10,6 +10,15 @@
         <%= f.label :description, for:"textarea1" %>
         <%= f.text_area :description, id:"textarea1", class:"materialize-textarea" %>
       </div>
+      <div class="row">
+        <div>
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+              <%= cb.check_box(class: "checkbox spacing", type: "checkbox") %>
+              <%= cb.label(class: "spacing") %>
+
+          <% end %>
+        </div>
+      </div>
           <%= f.submit %>
     </div>
   <% end %>
