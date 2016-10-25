@@ -1,11 +1,12 @@
 <div class="center-align row">
-  <% flash.each do |name, msg| %>
-    <div class="card horizontal col s6 m4 offset-m4 teal accent-4">
+  <% flash.each do |key, value| %>
+    <div class="<%= flash_class(key) %> card horizontal col s6 m4 offset-m4">
       <div class="card-stacked">
         <div class="card-content">
-          <p><%= msg %></p>
+          <%= value %>
         </div>
       </div>
+      <a href="#" data-dismiss="alert" class="close"><i class="material-icons white-text">clear</i></a>
     </div>
   <% end %>
 </div>
