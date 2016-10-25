@@ -1,6 +1,6 @@
 <div class="container">
-  <h2 class="center-align flow-text">Title: <%= @article.title %></h2>
   <div class="row">
+    <!-- for article's user-->
     <% if @article.user %>
     <div class="col s12 center-align">
       <ul>
@@ -13,25 +13,28 @@
       </ul>
     </div>
     <% end %>
-    <div class="col s12 m10 offset-m1">
+    <!-- for article-->
+    <div class="col s12 m12">
       <div class="card center-align blue lighten-5">
-        <span class="cart-title"><%= @article.title %></span>
-        <span class="flow-text"><%= simple_format(@article.description) %></span>
+        <h3 class="cart-title article-header"><%= @article.title %></h3>
+        <div class="divider"></div>
+        <div class="padding">
+          <p class="flow-text"><%= @article.description %></p>
+        </div>
         <% if @article.categories.any? %>
           <div class="card-action">
-            <p>
               <%= render @article.categories %>
-            </p>
           </div>
         <% end %>
       </div>
     </div>
   </div>
-
-
-  <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
-    <%= link_to 'Edit', edit_article_path(@article) %>
-    <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"} %>
-  <% end %>
-  <%= link_to 'Back to articles listing', articles_path %>
+  <div class="center-align">
+    <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
+      <%= link_to 'Edit', edit_article_path(@article), class: 'btn white-text green' %>
+      <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: "Are you sure?"},
+                                                    class: 'btn white-text deep-orange accent-4' %>
+    <% end %>
+    <%= link_to 'Back to articles listing', articles_path, class:"btn blue darken-2" %>
+  </div>
 </div>

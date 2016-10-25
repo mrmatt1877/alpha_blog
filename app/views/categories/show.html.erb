@@ -1,8 +1,8 @@
 <div class="container">
   <h1 class="center-align"><%= "Category: " + @category.name %></h1>
   <% if logged_in? and current_user.admin? %>
-    <p>
-      <%= link_to "Edit Category Name", edit_category_path(@category) %>
+    <p class="center-align padding">
+      <%= link_to "Edit Category Name", edit_category_path(@category), class: "btn green" %>
     </p>
   <% end %>
   <div class="center-align">

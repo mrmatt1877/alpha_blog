@@ -1,8 +1,10 @@
 <div class="container">
   <h1 class="center-align article-header">Listing All Articles</h1>
-  <div class="center-align article-index-new">
-    <%= link_to "Create new article", new_article_path, class:"btn blue darken-2" %>
-  </div>
+  <% if logged_in? %>
+    <div class="center-align article-index-new">
+      <%= link_to "Create new article", new_article_path, class:"btn blue darken-2" %>
+    </div>
+  <% end %>
   <div class="center-align">
     <%= will_paginate @collection, renderer: MaterializeRenderer %>
   </div>

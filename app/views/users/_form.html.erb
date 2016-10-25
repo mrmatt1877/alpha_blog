@@ -14,7 +14,7 @@
         <%= f.label :password %>
         <%= f.password_field :password %>
       </div>
-          <%= f.submit(@user.new_record? ? "Sign Up" : "Update account") %>
+          <%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: "btn blue darken-2") %>
     </div>
   <% end %>
 </div>

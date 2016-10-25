@@ -4,17 +4,18 @@
   <div class="row">
     <% @users.each do |user| %>
       <div class="col s4">
-        <ul class="card small">
-          <div>
-            <li><%= link_to gravatar_for(user), user_path(user)%></li>
-            <li><%= link_to user.username, user_path(user) %></li>
-            <li><%= pluralize(user.articles.count, "article") if user.articles %></li>
-            <% if logged_in? and current_user.admin? and user.id != current_user.id %>
-              <li><%= link_to "Delete this user", user_path(user), method: :delete,
-                    data: { confirm: "Are you sure you want to delete the user and all their articles?"} %></li>
-            <% end %>
-          </div>
-        </ul>
+        <div class="card small padding blue lighten-5">
+            <div class="valign">
+              <span><%= link_to gravatar_for(user), user_path(user)%></span>
+              <h3><%= link_to user.username, user_path(user), class: "grey-text text-darken-4" %></h3>
+              <p><%= pluralize(user.articles.count, "article") if user.articles %></p>
+              <% if logged_in? and current_user.admin? and user.admin != true %>
+              <%= link_to "Delete this user", user_path(user), method: :delete,
+                  data: { confirm: "Are you sure you want to delete the user and all their articles?"},
+                  class: 'btn white-text deep-orange accent-4' %>
+              <% end %>
+            </div>
+        </div>
       </div>
     <% end %>
   </div>

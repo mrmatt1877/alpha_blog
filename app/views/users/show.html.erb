@@ -1,11 +1,11 @@
 <div class="container center-align">
   <h1>Welcome to <%= @user.username %>'s page</h1>
   <div>
-    <div class="col m 4">
-      <%= gravatar_for @user, size: 150 %>
+    <div>
+      <%= gravatar_for @user, size: 250 %>
     </div>
   </div>
-  <h4><%= @user.username %>'s articles</h4>
+  <h4 class="padding">Articles Posted</h4>
   <%= render 'articles/article', obj: @user_articles %>
   <div class="center-align">
     <%= will_paginate @user_articles, renderer: MaterializeRenderer %>

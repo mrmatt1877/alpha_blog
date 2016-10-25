@@ -1,11 +1,17 @@
 <% if obj.errors.any? %>
 <div class="row">
-  <ul class="collection with-header col m6 s12">
-    <li class="collection-header red darken-4 white-text text-darken-2"><h4>The following errors prevented the article from getting created</h4></li>
-    <% obj.errors.full_messages.each do |msg| %>
-    <li class="collection-item"><%= msg %></li>
-    <% end %>
-  </ul>
+  <div class="col s6 m6 offset-s3 offset-m3">
+    <div class="card white-text deep-orange accent-4 padding">
+        <h4 class="center-align">The following errors prevented the article from getting created</h4>
+        <div class="center-align padding">
+          <% obj.errors.full_messages.each do |msg| %>
+          <li class="collection-item left-align"><%= msg %></li>
+          <% end %>
+        </div>
+    </div>
+  </div>
 </div>
+
+
 
 <% end %>
