@@ -3,7 +3,7 @@
   <%= will_paginate @collection, renderer: MaterializeRenderer %>
   <div class="row">
     <% @categories.each do |category| %>
-      <div class="col s4 m4">
+      <div class="col s6 m4">
         <div class="card blue lighten-5">
           <div class="card-title padding">
             <h5><%= link_to "#{category.name}", category_path(category), class: "grey-text text-darken-4" %></h5>

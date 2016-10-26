@@ -3,7 +3,7 @@
   <%= will_paginate @collection, renderer: MaterializeRenderer %>
   <div class="row">
     <% @users.each do |user| %>
-      <div class="col s4">
+      <div class="col s6 m4">
         <div class="card small padding blue lighten-5">
             <div class="valign">
               <span><%= link_to gravatar_for(user), user_path(user)%></span>
